@@ -5,15 +5,22 @@
 <head>
     <title>Tile Map</title>
     <style>
-        canvas {
+        #player,
+        #viewport {
             border: 2px solid black;
-            background-color: white;
+            background-color: transparent;
+            position: absolute;
+        }
+        
+        #player {
+            z-index: 100;
         }
     </style>
 </head>
 
 <body>
     <canvas id="viewport" width="640px" height="640px"></canvas>
+    <canvas id="player" width="640px" height="640px"></canvas>
     <script src="main.js"></script>
 </body>
 
