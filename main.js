@@ -147,14 +147,18 @@ function Sprite(key) {
     this.draw = function() {
         ctx_pCanvas.clearRect(0, 0, can_pCanvas.width, can_pCanvas.height); /* Clear the whole player canvas (a canvas used to draw the character only */
         /* This makes sure that the camera stops when the character is near the edge of the screen */
-        if (this.pos.x < 320 || this.pos.x > can_world.width - 320) {
+        if (this.pos.x < 320) {
             this.pos2.x = this.pos.x;
+        } else if (this.pos.x > can_world.width - 320) {
+            this.pos2.x = 640 - (can_world.width - this.pos.x);
         } else {
             this.pos2.x = can_pCanvas.width / 2;
         }
 
-        if (this.pos.y < 320 || this.pos.y > can_world.height - 320) {
+        if (this.pos.y < 320) {
             this.pos2.y = this.pos.y;
+        } else if (this.pos.y > can_world.height - 320) {
+            this.pos2.y = 640 - (can_world.height - this.pos.y);
         } else {
             this.pos2.y = can_pCanvas.height / 2;
         }
@@ -165,12 +169,12 @@ function Sprite(key) {
 
     this.update = function() {
         /* Here we check to see if any buttons where pressed and if our character is in the world */
-        if (cursor.rightPressed && this.pos.x < can_world.width) {
+        if (cursor.rightPressed && this.pos.x < can_world.width - this.width) {
             this.pos.x += this.speed.x;
         } else if (cursor.leftPressed && this.pos.x >= 0) {
             this.pos.x -= this.speed.x;
         }
-        if (cursor.downPressed && this.pos.y < can_world.height) {
+        if (cursor.downPressed && this.pos.y < can_world.height - this.height) {
             this.pos.y += this.speed.y;
         } else if (cursor.upPressed && this.pos.y >= 0) {
             this.pos.y -= this.speed.y;
