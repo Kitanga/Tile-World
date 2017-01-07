@@ -263,4 +263,4 @@ Just download/clone this repo and then open index.html. The game should run. If 
 
 Or better yet [play it here][1]. Use arrows for controls.
 
-  [1]: https://github.com/Kitanga/Tile-World
+  [1]: https://kitanga.github.io/Tile-World/
