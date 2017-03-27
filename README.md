@@ -2,6 +2,8 @@
 A simple game I created to answer a [question on gamedev StackExchange](http://gamedev.stackexchange.com/questions/132064/2d-tile-movement-and-camera)
 You can [play it here][1].
 
+(Sorry about the bad english in the documentation below. Was in a hurry)
+
 ## Contents
 - [Description](#description)
 - [How it all works](#how-it-all-works)
